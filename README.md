@@ -29,3 +29,30 @@ The project uses:
 ---
 
 ## 📂 Project Structure
+
+---
+
+## ⚙️ How Banker's Algorithm Works
+Banker's Algorithm determines whether the system is in a **safe state** by checking if all processes can complete execution with the available resources.
+
+### Key Data Structures:
+- **Max Demand Matrix** – Maximum resources required by each process
+- **Allocation Matrix** – Resources currently allocated
+- **Available Vector** – Resources currently available
+- **Need Matrix** = Max Demand − Allocation
+
+### Algorithm Steps:
+1. Calculate the **Need** matrix
+2. Check for a process whose need is less than or equal to available resources
+3. Allocate resources temporarily and mark process as finished
+4. Repeat until:
+   - All processes finish → **Safe State**
+   - No process can proceed → **Unsafe State**
+
+---
+
+## 🧠 Program Explanation
+
+### 1️⃣ Safety Check Function
+```python
+def is_safe_state(max_demand, allocation, available):
